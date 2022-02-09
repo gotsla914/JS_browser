@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      body {
+        padding-top: 50px;
+      }
+      img {
+        margin: 0 auto;
+        display: block;
+      }
+      .findIt {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+
+      .reset {
+        display:block;
+        width:100px;
+        margin: 20px auto;
+      }
+
+      .move {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <img src="img/carrot.png" alt="당근" class="carrot" />
+    <img src="img/carrot.png" alt="당근" class="carrot" />
+    <img src="img/carrot.png" alt="당근" class="carrot" />
+    <img src="img/carrot.png" alt="당근" class="carrot" />
+    <img src="img/carrot.png" alt="당근" class="carrot" />
+    <img src="img/carrot.png" alt="당근" class="carrot" />
+    <img src="img/carrot.png" alt="당근" class="carrot" />
+    <img src="img/rabbit.png" alt="토끼" class="rabbit" />
+    <img src="img/carrot.png" alt="당근" class="carrot" />
+    <img src="img/carrot.png" alt="당근" class="carrot" />
+    <aside class="findIt"><button>토끼찾기!</button></aside>
+    <aside class="reset"><button>다시하기</button></aside>
+    <aside class="move"><button>느긋하게 찾기🥱</button></aside>
+    <script>
+      const findIt = document.querySelector('.findIt');
+      const rabbit = document.querySelector('.rabbit');
+      const reset = document.querySelector('.reset');
+      const move = document.querySelector('.move');
+
+      findIt.addEventListener('click', () => {
+        rabbit.scrollIntoView();
+      });
+      reset.addEventListener('click', () => 
+        window.scrollTo(0, 0)
+        );
+      move.addEventListener('click', () => {
+        window.scrollBy(0, 100);
+      });
+    </script>
+  </body>
+</html>
