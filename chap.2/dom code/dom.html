@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💕🧸</title>
+    <style>
+      html {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      body {
+        background-color: #e4e4e4;
+        text-align: center;
+        color: rgb(199, 57, 57);
+      }
+      section {
+        width: 50%;
+        margin: 50px auto;
+        background-color: #f1dad0;;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      img {
+        z-index: 100;
+        border-radius: 150px;
+        will-change: opacity;
+      }
+      h1,
+      h3,
+      span {
+        color: rgb(201, 113, 113);;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="img/avatar.png" alt="avatar" />
+      <h1 id="brand">Ggo Ggam ie</h1>
+      <h3>This's my adorableee puppy!</h3>
+    </section>
+    <span>Hello World!</span>
+    <script>
+      // const image = document.querySelector('img[src="img/avarta.png"]');
+
+      const section = document.querySelector('section');
+      const h2 = document.createElement('h2'); // h2 만듦
+      h2.setAttribute('class', 'title');    // 클래스 부여
+      h2.textContent = 'createElement <h2> ';  // 텍스트 내용 추가
+     // section.appendChild(h2); 끝 부분에 추가
+      
+      const h3 = document.querySelector('h3');
+      section.insertBefore(h2, h3); //A를, B노드 앞에 추가
+
+      // section.innerHTML = `
+      // <img src="img/avatar.png" alt="avatar" />    // section 전체 수정이 일어남
+      // <h1 id="brand">Dream Coding</h1>         // dom tree만들고, render tree만들고... 번잡해짐!    
+      // `;
+
+      // section.removeChild(h2); 
+      // creatElement로 h2를 만들면, h2 element reference를 갖고 있기 때문에
+      // h2를 빼는 것도 가능함!
+    </script>
+  </body>
+</html>
