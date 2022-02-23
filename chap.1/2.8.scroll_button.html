@@ -31,6 +31,13 @@
     <div></div>
     <div></div>
     <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
     <div class="special"></div>
     <div></div>
     <div></div>
@@ -71,7 +78,7 @@
         window.scrollTo(0, 100);
       });
       scrollInto.addEventListener("click", () => {
-        special.scrollIntoView();
+        special.scrollIntoView({ block: "center"});
       });
       scrollBySmooth.addEventListener("click", () => {
         window.scrollBy({ top: 200, left: 0, behavior: "smooth" });
