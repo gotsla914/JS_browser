@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: lightblue;
+        }
+
+        .middle {
+            position: relative;
+            top: 125px;
+            width: 50%;
+            height: 50%;
+            margin: 0 auto;
+            background-color: lightpink;
+        }
+
+        button {
+            position: relative;
+            top: 50%;
+            display: block;
+            width: 70px;
+            height: 22px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="middle">
+            <button>
+                click me
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const outer = document.querySelector('.outer');
+        const middle = document.querySelector('.middle');
+        const btn = document.querySelector('button');
+
+        outer.addEventListener('click', () => {
+            console.log(`outer : ${event.currentTarget}, ${event.target}`);
+        });
+
+        middle.addEventListener('click', () => {
+            console.log(`middle : ${event.currentTarget}, ${event.target}`);
+        });
+
+        btn.addEventListener('click', () => {
+            console.log(`btn : ${event.currentTarget}, ${event.target}`);
+        });
+    </script>
+</body>
+
+</html>
