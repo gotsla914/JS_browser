@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Methods-API 3개</title>
+    <style>
+        p {
+            width: 25%;
+            margin: 1rem auto;
+            padding: 1rem;
+            border: 2px solid lightblue;
+        }
+
+        div {
+            width: 4.5rem;
+            text-align: center;
+            margin: 0 auto;
+            background-color: lightblue;
+            box-shadow: 1px 1px lightslategray;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>EventTarget.addEventListener() <br>
+        .dispatchEvent() <br>
+        .removeEventListener() <br>
+
+        모든 Elements는 node를 상속하므로, <br>
+        모든 Elements가 EventTarget이다.
+        <br><br> 
+        *dispatchEvent는 이벤트를 <br> 인공적으로 만들고, 전송 시켜서 <br> <br> 
+        dispatchEvent(new Event('click')) <br>  ---> 뉴이벤트를 생성 <br> 
+        -> 클릭이벤트를 만듦 <br> -> 인공적으로 클릭이벤트를 전송 <br> -> 클릭 된 이벤트를 볼 수 있음
+
+    </p>
+    <div>click me</div>
+    <script>
+    </script>
+</body>
+
+</html>
