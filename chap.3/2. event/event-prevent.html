@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      div {
-        width: 250px;
-        height: 250px;
-        background-color: yellow;
-        margin-bottom: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <div>
-      <input type="checkbox" />
-    </div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <script>
-      document.addEventListener('wheel', event => {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    div {
+      width: 250px;
+      height: 250px;
+      background-color: yellow;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>브라우저의 기본기능 취소방법</h1>
+  <span>Prevent</span>
+  <div>
+    <input type="checkbox" />
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <script>
+    document.addEventListener('wheel', event => {
         console.log('scrolling');
         event.preventDefault();
-      });
-      const checkbox = document.querySelector('input');
-      checkbox.addEventListener('click', event => {
-        // long
-        console.log('checked');
-        event.preventDefault();
-      });
-    </script>
-  </body>
+        // wheel 이벤트는 passive true. -> default 먹히지 않음 -> target이 passive하게 되어있음
+        // wheel은 빠르게 스크롤 되어야하기 때문에 preventDefaul하면 무시하고 자기 할일을 먼저 하게 됨.(수동적)
+        // passive의 listener는 절대 prevenDefault를 호출하지 않을 거야
+      }
+      // ,{ passive: false } optional로 변경가능하지만 쓰지 않는다X
+      // 웬만해선 passive가 true로 세팅되어 있는 것은 passive하게 사용하는것이 좋다. 손대지 말것
+
+    );
+    const checkbox = document.querySelector('input');
+    checkbox.addEventListener('click', event => {
+      // long
+      console.log('checked');
+      event.preventDefault();
+      // 브라우저 자체 설정 (체크버튼 보여주는)기능 끄기
+    });
+  </script>
+</body>
+
 </html>
