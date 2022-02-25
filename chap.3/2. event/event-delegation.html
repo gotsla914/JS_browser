@@ -11,6 +11,7 @@
     </style>
   </head>
   <body>
+  <h1>이벤트 위임(Delegation)</h1>
     <ul>
       <li>1</li>
       <li>2</li>
@@ -24,7 +25,7 @@
       <li>10</li>
     </ul>
     <script>
-      // Bad
+      // Bad - 모든 요소를 찾아서 일일이 이벤트 등록하는 것 XXX
       // const lis = document.querySelectorAll('li');
       // lis.forEach(li => {
       //   li.addEventListener('click', () => {
@@ -33,6 +34,7 @@
       // });
 
       // Coooooooool 🙌
+      // Coooooooool !
       const ul = document.querySelector('ul');
       ul.addEventListener('click', event => {
         if (event.target.tagName == 'LI') {
