@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .outer {
-        width: 500px;
-        height: 500px;
-        background-color: yellow;
-      }
 
-      .middle {
-        width: 50%;
-        height: 50%;
-        margin: auto;
-        background-color: thistle;
-        transform: translateY(50%);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .outer {
+      width: 500px;
+      height: 500px;
+      background-color: yellow;
+    }
 
-      button {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="outer">
-      <div class="middle">
-        <button>Click Me</button>
-      </div>
+    .middle {
+      width: 50%;
+      height: 50%;
+      margin: auto;
+      background-color: thistle;
+      transform: translateY(50%);
+    }
+
+    button {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="middle">
+      <button>Click Me</button>
     </div>
-    <script>
-      const outer = document.querySelector('.outer');
-      const middle = document.querySelector('.middle');
-      const button = document.querySelector('button');
+  </div>
+  <script>
+    const outer = document.querySelector('.outer');
+    const middle = document.querySelector('.middle');
+    const button = document.querySelector('button');
 
-      outer.addEventListener('click', event => {
-        if (event.target !== event.currentTarget) {
-          return;
-        }
-        console.log(`outer: ${event.currentTarget}, ${event.target}`);
-      });
-      middle.addEventListener('click', event => {
-        if (event.target !== event.currentTarget) {
-          return;
-        }
-        console.log(`middle ${event.currentTarget}, ${event.target}`);
-      });
-      button.addEventListener('click', event => {
-        console.log(`button1 ${event.currentTarget}, ${event.target}`);
-      });
-      button.addEventListener('click', event => {
-        console.log(`button2 ${event.currentTarget}, ${event.target}`);
-      });
-    </script>
-  </body>
+    outer.addEventListener('click', event => {
+      if (event.target !== event.currentTarget) {
+        return;
+      }
+      console.log(`outer: ${event.currentTarget}, ${event.target}`);
+    });
+    middle.addEventListener('click', event => {
+      if (event.target !== event.currentTarget) {
+        return;
+      }
+      console.log(`middle ${event.currentTarget}, ${event.target}`);
+    });
+    button.addEventListener('click', event => {
+      console.log(`button1 ${event.currentTarget}, ${event.target}`);
+    });
+    button.addEventListener('click', event => {
+      console.log(`button2 ${event.currentTarget}, ${event.target}`);
+    });
+    
+    //상위 요소로 전달되지 않음
+    //event.stopPropagation(); 전달 멈춰! 내 기준 상위로 버블링 멈춰
+    //event.stopImmediatePropagation(); 나 빼고 버블 싹 다 멈춰!
+
+  </script>
+</body>
+
 </html>
