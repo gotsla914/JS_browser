@@ -16,7 +16,12 @@
 const items = document.querySelector('.items');
 const addBtn = document.querySelector('.footer__button');
 const input = document.querySelector('.footer__input');
+const form = document.querySelector('.new_form');
 
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    onAdd();
+    });
 
 function onAdd() {
     //1. 사용자 입력한 텍스트를 받아옴
