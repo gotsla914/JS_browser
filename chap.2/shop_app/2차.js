@@ -92,7 +92,7 @@ addBtn.addEventListener('click', () => {
 
 
 // 6. 엔터키 동작시 onAdd 함수 실행
-input.addEventListener('keypress', (event) => {
+input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         onAdd();
     };

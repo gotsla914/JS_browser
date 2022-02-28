@@ -121,7 +121,7 @@ addBtn.addEventListener('click', () => {
 
 // 마지막-엔터키로 인풋 내용 등록
 // 어떤키가 눌렸는지 알려면 event를 바라보면 됨
-input.addEventListener('keypress', event => {
+input.addEventListener('keydown', event => {
     if (event.key === 'Enter') {
         onAdd();
     }
