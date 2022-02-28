@@ -161,3 +161,10 @@ function creatItem(text) { // createElement는 태그네임 만들어줌-클래�
 addBtn.addEventListener('click', () => {
     onAdd();
 });
+
+
+input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        onAdd();
+    }
+});
