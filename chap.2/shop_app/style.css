@@ -70,7 +70,7 @@ main>.items>.item__row>.item>.item__delete:hover {
     margin: 10px auto;
 }
 
-footer>.footer__input {
+footer>form>.footer__input {
     height: 1.7rem;
     display: inline-block;
     width: 100%;
@@ -80,7 +80,7 @@ footer>.footer__input {
     padding: 0.5rem 1rem;
 }
 
-footer>.footer__button {
+footer>form>.footer__button {
     width: 100%;
     margin: 0 auto;
     padding: 0.5rem 0;
