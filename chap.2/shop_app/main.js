@@ -3,6 +3,8 @@
 // 주요 함수만들기 - 인풋받아오기, 아이템생성(생성함수짜기,끼워넣기)후 끼워넣기
 // 인풋 스크롤링 고정되게, 인풋내용 초기화, 인풋창 포커스 고정, 엔터 기능넣기
 
+'use strict';
+
 const items = document.querySelector('.items');
 const addBtn = document.querySelector('.footer__button');
 const input = document.querySelector('.footer__input');
